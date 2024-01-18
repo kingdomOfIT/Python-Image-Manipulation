@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <title>Image Upload</title>
 </head>
 <body>
@@ -17,18 +18,50 @@
 </form>
 
 <!-- Display Image -->
-{% if uploaded_image %}
-    <img src="{{ uploaded_image.url }}" alt="Uploaded Image">
-{% endif %}
-
-<!-- 5 Different Buttons in the Same Line -->
-<div>
-    <button type="button">Button 1</button>
-    <button type="button">Button 2</button>
-    <button type="button">Button 3</button>
-    <button type="button">Button 4</button>
-    <button type="button">Button 5</button>
+<div id="image-container">
+    {% if uploaded_image %}
+        <img id="uploaded-image" src="{{ uploaded_image }}" alt="Uploaded Image">
+    {% elif processed_image_base64 %}
+        <img id="processed-image" src="data:image/png;base64,{{ processed_image_base64 }}" alt="Processed Image">
+    {% endif %}
 </div>
+
+<div>
+    <button type="button" onclick="run_function(1)">Button 1</button>
+    <button type="button" onclick="run_function(2)">Button 2</button>
+    <button type="button" onclick="run_function(3)">Button 3</button>
+    <button type="button" onclick="run_function(4)">Button 4</button>
+    <button type="button" onclick="run_function(5)">Button 5</button>
+    <button type="button" onclick="run_function(6)">Button 6</button>
+</div>
+
+<div id="image-container">
+    <img id="processed-image" src="data:image/png;base64,{{ processed_image_base64 }}" alt="Processed Image">
+</div>
+
+<script>
+    function run_function(buttonNumber){
+    console.log("running");
+    var uploadedImagePath = document.getElementById('uploaded-image').src;
+        $.ajax({
+            url : "/", // the endpoint
+            type : "GET", // http method
+            data : { buttonNumber : buttonNumber, 
+                    uploadedImage : uploadedImagePath,
+                    which: "base64"}, // data sent with the get request
+
+            // handle a successful response
+            success : function(json) {
+                console.log("success"); // another sanity check
+            },
+
+            // handle a non-successful response
+            error : function(xhr,errmsg,err) {
+                console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+            }
+        });
+    };
+</script>
 
 </body>
 </html>
