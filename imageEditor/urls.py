@@ -7,7 +7,6 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='image_upload'),
-    path('process', views.process, name='process'),
 ]
 
 if settings.DEBUG:

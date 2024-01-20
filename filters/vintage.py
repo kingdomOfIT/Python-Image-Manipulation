@@ -1,11 +1,10 @@
 from PIL import Image, ImageEnhance, ImageFilter
 import numpy as np
-import os
+import base64, io
 
-class Vintage:
+class VintageFilter:
 
-    def apply_vintage_effect(image_path, vintage_strength=1.5):
-        # Open the image using Pillow
+    def apply_vintage_filter(image_path, vintage_strength=1.5):
         image_path = image_path[len("http://127.0.0.1:8000/"):]
         print("This is the image path: ", image_path)
 
@@ -32,20 +31,8 @@ class Vintage:
         # Apply a slight blur for a more aged look
         vintage_img = vintage_img.filter(ImageFilter.BLUR)
 
-        # Specify the output file path
-        # name_without_extension, extenstion = os.path.splitext(os.path.basename(image_path))
+        buffered = io.BytesIO()
+        vintage_img.save(buffered, format="PNG")
+        processed_image_base64 = base64.b64encode(buffered.getvalue()).decode("utf-8")
 
-        # second_file_name = f'{name_without_extension}_edited{extenstion}'
-
-
-        # output_path = os.path.join("media", os.path.basename(second_file_name))
-        # # Save the result
-        # vintage_img.save(output_path)
-
-        # # Return the path of the saved image
-        # return output_path
-    
-        # Instead of saving, return the modified image as bytes
-        modified_image_bytes = vintage_img.tobytes()
-
-        return modified_image_bytes
+        return processed_image_base64
