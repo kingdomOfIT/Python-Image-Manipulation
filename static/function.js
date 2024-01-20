@@ -1,3 +1,8 @@
+document.addEventListener("DOMContentLoaded", function() {
+    // Trigger click on the first button when the page is loaded
+    document.getElementById('clarendoneButton').click();
+});
+
 function run_function(button_number){
     console.log("running");
     var uploaded_image_path = document.getElementById('uploaded-image').src;

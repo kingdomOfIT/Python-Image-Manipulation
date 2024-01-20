@@ -2,8 +2,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #1a1a1a; /* Dark background color */
-  color: #fff; /* Font color */
+  background: linear-gradient(to right, #2c296e, #131633);
+  color: #fff;
   text-align: center;
 }
 
@@ -31,7 +31,7 @@ body {
 
 #upload-label {
   padding: 10px 20px;
-  background-color: #4CAF50; /* Green button color */
+  background-color: #6a5acd;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -42,7 +42,7 @@ body {
 #image-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 30px; /* Added margin-bottom for spacing */
+  margin-bottom: 30px;
 }
 
 .image {
@@ -56,13 +56,19 @@ body {
   top: 10px;
   right: 10px;
   padding: 10px 20px;
-  background-color: #4CAF50; /* Green button color */
+  background-color: #6a5acd;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  transition: background-color 0.3s ease;
 }
+
+#download-button:hover {
+  background-color: #483d8b;
+}
+
 
 #button-container {
   display: flex;
@@ -72,10 +78,15 @@ body {
 .button {
   padding: 10px 20px;
   margin: 0 10px;
-  background-color: #4CAF50; /* Green button color */
+  background-color: #6a5acd;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #483d8b;
 }
