@@ -4,17 +4,9 @@
   <br /> -->
   <div>
     <img src="https://img.shields.io/badge/-Python-black?style=for-the-badge&logoColor=white&logo=python&color=4584b6" alt="python" />
-  </div>
-  <div>
     <img src="https://img.shields.io/badge/-Django-black?style=for-the-badge&logoColor=white&logo=django&color=092E20" alt="django" />
-  </div>
-  <div>
     <img src="https://img.shields.io/badge/-HTML-black?style=for-the-badge&logoColor=white&logo=html5&color=e34c26" alt="html5" />
-  </div>
-  <div>
     <img src="https://img.shields.io/badge/-css-black?style=for-the-badge&logoColor=white&logo=css3&color=264de4" alt="css3" />
-  </div>
-  <div>
     <img src="https://img.shields.io/badge/-JavaScript-black?style=for-the-badge&logoColor=white&logo=javascript&color=323330" alt="javascript" />
   </div>
 
