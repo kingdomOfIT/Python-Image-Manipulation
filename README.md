@@ -1,6 +1,6 @@
 <div align="center">
   <br />
-    <img src="https://github.com/kingdomOfIT/Python-Live-Chat-App/blob/main/media/CoverImage.png" alt="Project Banner">
+    <img src="https://github.com/kingdomOfIT/Python-Image-Manipulation/blob/main/media/CoverImage.png" alt="Project Banner">
   <br />
   <div>
     <img src="https://img.shields.io/badge/-Python-black?style=for-the-badge&logoColor=white&logo=python&color=4584b6" alt="python" />
